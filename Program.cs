@@ -14,7 +14,7 @@ ShowNums(userNumber);
 
 //Задача 66: Задайте значения M и N. Напишите программу, 
 //которая найдёт сумму натуральных элементов в промежутке от M до N.
-
+/*
 int SumOfNumbers(int number1, int number2)
 {
     
@@ -33,3 +33,23 @@ Console.Write("Введите второе число: ");
 int userNumber2 = Convert.ToInt32(Console.ReadLine());
 int result = SumOfNumbers(userNumber1, userNumber2);
 Console.WriteLine($"Сумма числел между {userNumber1} и {userNumber2} равна {result} ");
+
+*/
+
+//Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии.
+//Даны два неотрицательных числа m и n.
+
+int Accerman(int n, int m)
+{
+    if (n == 0) return m + 1;
+    else 
+        if (m == 0) return Accerman (n - 1, 1);
+        else return Accerman(n - 1, Accerman (n, m - 1));
+}
+
+Console.Write("Введите первое число: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int number2 = Convert.ToInt32(Console.ReadLine());
+int result = Accerman(number1, number2);
+Console.WriteLine(result);
